@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label for="userInput">Enter a number:</label>
+        <input type="text" id="userInput" name="userInput">
+        <button id="checkBtn" type="button">Check</button>
+        <p id="result" role="status" aria-live="polite"></p>
+
+        <script>
+            function checkInput() {
+                const userInput = document.getElementById("userInput").value.trim();
+                const resultElement = document.getElementById("result");
+
+                if (userInput === "") {
+                    resultElement.textContent = "Please enter a valid number.";
+                    return;
+                }
+
+                const number = Number(userInput);
+
+                if (!Number.isFinite(number)) {
+                    resultElement.textContent = "Please enter a valid number.";
+                } else if (number < 10) {
+                    resultElement.textContent = "The number is less than 10.";
+                } else if (number > 10) {
+                    resultElement.textContent = "The number is greater than 10.";
+                } else {
+                    resultElement.textContent = "The number is equal to 10.";
+                }
+            }
+
+            document.getElementById("checkBtn").addEventListener("click", checkInput);
+        </script>
+    </body>
+</html>

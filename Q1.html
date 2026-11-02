@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="myElement">
+            <p id="message">Welcome to my webpage!</p>
+        </div>
+        <button id="changeBtn">Change Message</button>
+        <script>
+            function changeMessage() {
+                document.getElementById("message").textContent = "Hello there!";
+            }
+            document.getElementById("changeBtn").addEventListener("click", changeMessage);
+        </script>
+    </body>
+</html>
